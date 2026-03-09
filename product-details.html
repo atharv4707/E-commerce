@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - LUXORA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="product-details.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="window.location.href='index.html'">LUXORA</div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link">Shop</a>
+                <a href="index.html#categories" class="nav-link">Categories</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="icon-btn search-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" onclick="window.location.href='cart.html'">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Details Section -->
+    <section class="product-details-section">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <a href="products.html">Shop</a>
+            <span>/</span>
+            <span id="breadcrumbCategory">Product</span>
+        </div>
+
+        <div class="product-details-container" id="productDetailsContainer">
+            <!-- Content will be loaded by JavaScript -->
+        </div>
+    </section>
+
+    <!-- Related Products -->
+    <section class="related-products">
+        <div class="section-header">
+            <h2 class="section-title">You May Also Like</h2>
+        </div>
+        <div class="products-grid" id="relatedProducts"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">LUXORA</h3>
+                <p class="footer-desc">Elevating everyday style with premium quality and timeless design.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                    <a href="#" class="social-link">📌</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Shop</h4>
+                <a href="products.html" class="footer-link">All Products</a>
+                <a href="products.html?category=clothing" class="footer-link">Clothing</a>
+                <a href="products.html?category=accessories" class="footer-link">Accessories</a>
+                <a href="products.html?category=footwear" class="footer-link">Footwear</a>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Help</h4>
+                <a href="#" class="footer-link">Customer Service</a>
+                <a href="#" class="footer-link">Track Order</a>
+                <a href="#" class="footer-link">Returns</a>
+                <a href="#" class="footer-link">Shipping Info</a>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Company</h4>
+                <a href="#" class="footer-link">About Us</a>
+                <a href="#" class="footer-link">Careers</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 LUXORA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="product-details.js"></script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - LUXORA</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="products.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo" onclick="window.location.href='index.html'">LUXORA</div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="products.html" class="nav-link active">Shop</a>
+                <a href="index.html#categories" class="nav-link">Categories</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="icon-btn search-btn" onclick="toggleSearch()">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" onclick="window.location.href='cart.html'">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="banner-content">
+            <h1 class="banner-title">Discover Your Style</h1>
+            <p class="banner-text">Explore our curated collection of premium products</p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="products-container">
+            <!-- Sidebar Filters -->
+            <aside class="filters-sidebar" id="filtersSidebar">
+                <div class="filters-header">
+                    <h3>Filters</h3>
+                    <button class="filter-reset" onclick="resetFilters()">Reset All</button>
+                </div>
+
+                <!-- Search Filter -->
+                <div class="filter-group">
+                    <label class="filter-label">Search</label>
+                    <input type="text" id="searchInput" class="filter-input" placeholder="Search products..." oninput="applyFilters()">
+                </div>
+
+                <!-- Category Filter -->
+                <div class="filter-group">
+                    <label class="filter-label">Category</label>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="all" checked onchange="handleCategoryFilter(this)">
+                            <span>All Products</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="electronics" onchange="handleCategoryFilter(this)">
+                            <span>Electronics</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="clothing" onchange="handleCategoryFilter(this)">
+                            <span>Clothing</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="accessories" onchange="handleCategoryFilter(this)">
+                            <span>Accessories</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="footwear" onchange="handleCategoryFilter(this)">
+                            <span>Footwear</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="watches" onchange="handleCategoryFilter(this)">
+                            <span>Watches</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="bags" onchange="handleCategoryFilter(this)">
+                            <span>Bags</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Price Filter -->
+                <div class="filter-group">
+                    <label class="filter-label">Price Range</label>
+                    <div class="price-inputs">
+                        <input type="number" id="minPrice" placeholder="Min" class="price-input" oninput="applyFilters()">
+                        <span>-</span>
+                        <input type="number" id="maxPrice" placeholder="Max" class="price-input" oninput="applyFilters()">
+                    </div>
+                </div>
+
+                <!-- Rating Filter -->
+                <div class="filter-group">
+                    <label class="filter-label">Minimum Rating</label>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="radio" name="rating" value="0" checked onchange="applyFilters()">
+                            <span>All Ratings</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="rating" value="4" onchange="applyFilters()">
+                            <span>⭐ 4.0 & above</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="rating" value="4.5" onchange="applyFilters()">
+                            <span>⭐ 4.5 & above</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="rating" value="4.8" onchange="applyFilters()">
+                            <span>⭐ 4.8 & above</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Badge Filter -->
+                <div class="filter-group">
+                    <label class="filter-label">Special</label>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" value="new" onchange="applyFilters()">
+                            <span>New Arrivals</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="trending" onchange="applyFilters()">
+                            <span>Trending</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" value="sale" onchange="applyFilters()">
+                            <span>On Sale</span>
+                        </label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Products Area -->
+            <div class="products-area">
+                <div class="products-header">
+                    <div class="products-info">
+                        <h2 id="productsTitle">All Products</h2>
+                        <p id="productsCount">Showing 18 products</p>
+                    </div>
+                    <div class="products-controls">
+                        <button class="filter-toggle" onclick="toggleFilters()">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="4" y1="21" x2="4" y2="14"></line>
+                                <line x1="4" y1="10" x2="4" y2="3"></line>
+                                <line x1="12" y1="21" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12" y2="3"></line>
+                                <line x1="20" y1="21" x2="20" y2="16"></line>
+                                <line x1="20" y1="12" x2="20" y2="3"></line>
+                                <line x1="1" y1="14" x2="7" y2="14"></line>
+                                <line x1="9" y1="8" x2="15" y2="8"></line>
+                                <line x1="17" y1="16" x2="23" y2="16"></line>
+                            </svg>
+                            Filters
+                        </button>
+                        <select class="sort-select" id="sortSelect" onchange="applyFilters()">
+                            <option value="featured">Featured</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                            <option value="name">Name: A to Z</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="products-grid" id="productsGrid"></div>
+
+                <div class="no-results" id="noResults" style="display: none;">
+                    <div class="no-results-icon">🔍</div>
+                    <h3>No products found</h3>
+                    <p>Try adjusting your filters or search terms</p>
+                    <button class="btn-primary" onclick="resetFilters()">Clear Filters</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">LUXORA</h3>
+                <p class="footer-desc">Elevating everyday style with premium quality and timeless design.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                    <a href="#" class="social-link">📌</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Shop</h4>
+                <a href="products.html" class="footer-link">All Products</a>
+                <a href="products.html?category=clothing" class="footer-link">Clothing</a>
+                <a href="products.html?category=accessories" class="footer-link">Accessories</a>
+                <a href="products.html?category=footwear" class="footer-link">Footwear</a>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Help</h4>
+                <a href="#" class="footer-link">Customer Service</a>
+                <a href="#" class="footer-link">Track Order</a>
+                <a href="#" class="footer-link">Returns</a>
+                <a href="#" class="footer-link">Shipping Info</a>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Company</h4>
+                <a href="#" class="footer-link">About Us</a>
+                <a href="#" class="footer-link">Careers</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 LUXORA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="products.js"></script>
+</body>
+</html>

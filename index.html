@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXORA - Premium Lifestyle Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">LUXORA</div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="products.html" class="nav-link">Shop</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button class="icon-btn search-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="icon-btn cart-btn" onclick="window.location.href='cart.html'">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-background"></div>
+        <div class="hero-container">
+            <div class="hero-content-wrapper">
+                <span class="new-collection-badge">New Collection 2024</span>
+                <h1 class="main-heading">Elevate Your<br>Everyday Style</h1>
+                <p class="hero-subtitle">Discover curated pieces that blend timeless elegance with modern sophistication</p>
+                <div class="cta-buttons">
+                    <button class="primary-cta" onclick="window.location.href='products.html'">
+                        Explore Collection
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                    <button class="secondary-cta" onclick="window.location.href='#categories'">View Categories</button>
+                </div>
+            </div>
+            <div class="trust-indicators">
+                <div class="indicator">
+                    <div class="indicator-number">500+</div>
+                    <div class="indicator-text">Premium Products</div>
+                </div>
+                <div class="divider-line"></div>
+                <div class="indicator">
+                    <div class="indicator-number">50K+</div>
+                    <div class="indicator-text">Happy Customers</div>
+                </div>
+                <div class="divider-line"></div>
+                <div class="indicator">
+                    <div class="indicator-number">4.9★</div>
+                    <div class="indicator-text">Customer Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories" id="categories">
+        <div class="section-header">
+            <h2 class="section-title">Shop by Category</h2>
+            <p class="section-subtitle">Explore our carefully curated collections</p>
+        </div>
+        <div class="category-grid">
+            <div class="category-card" data-category="electronics">
+                <div class="category-image">
+                    <div class="category-icon">📱</div>
+                </div>
+                <h3 class="category-name">Electronics</h3>
+                <p class="category-desc">Latest tech essentials</p>
+                <span class="category-count">24 Products</span>
+            </div>
+            <div class="category-card" data-category="clothing">
+                <div class="category-image">
+                    <div class="category-icon">👔</div>
+                </div>
+                <h3 class="category-name">Clothing</h3>
+                <p class="category-desc">Premium fashion wear</p>
+                <span class="category-count">48 Products</span>
+            </div>
+            <div class="category-card" data-category="accessories">
+                <div class="category-image">
+                    <div class="category-icon">💍</div>
+                </div>
+                <h3 class="category-name">Accessories</h3>
+                <p class="category-desc">Elegant finishing touches</p>
+                <span class="category-count">36 Products</span>
+            </div>
+            <div class="category-card" data-category="footwear">
+                <div class="category-image">
+                    <div class="category-icon">👟</div>
+                </div>
+                <h3 class="category-name">Footwear</h3>
+                <p class="category-desc">Step in style</p>
+                <span class="category-count">32 Products</span>
+            </div>
+            <div class="category-card" data-category="watches">
+                <div class="category-image">
+                    <div class="category-icon">⌚</div>
+                </div>
+                <h3 class="category-name">Watches</h3>
+                <p class="category-desc">Timeless timepieces</p>
+                <span class="category-count">18 Products</span>
+            </div>
+            <div class="category-card" data-category="bags">
+                <div class="category-image">
+                    <div class="category-icon">👜</div>
+                </div>
+                <h3 class="category-name">Bags</h3>
+                <p class="category-desc">Luxury carry-alls</p>
+                <span class="category-count">28 Products</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+        <div class="section-header">
+            <h2 class="section-title">Trending Now</h2>
+            <p class="section-subtitle">Handpicked favorites from our latest collection</p>
+        </div>
+        <div class="products-grid" id="featuredProducts"></div>
+        <div class="section-footer">
+            <button class="btn-secondary" onclick="window.location.href='products.html'">View All Products</button>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="features" id="about">
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3 class="feature-title">Free Shipping</h3>
+                <p class="feature-text">On orders over $100</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 class="feature-title">Secure Payment</h3>
+                <p class="feature-text">100% protected transactions</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">↩️</div>
+                <h3 class="feature-title">Easy Returns</h3>
+                <p class="feature-text">30-day return policy</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💬</div>
+                <h3 class="feature-title">24/7 Support</h3>
+                <p class="feature-text">Dedicated customer care</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2 class="newsletter-title">Stay in the Loop</h2>
+            <p class="newsletter-text">Subscribe to receive exclusive offers and style updates</p>
+            <form class="newsletter-form" onsubmit="return handleNewsletter(event)">
+                <input type="email" placeholder="Enter your email" class="newsletter-input" required>
+                <button type="submit" class="btn-primary">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-logo">LUXORA</h3>
+                <p class="footer-desc">Elevating everyday style with premium quality and timeless design.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                    <a href="#" class="social-link">📌</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Shop</h4>
+                <a href="products.html" class="footer-link">All Products</a>
+                <a href="products.html?category=clothing" class="footer-link">Clothing</a>
+                <a href="products.html?category=accessories" class="footer-link">Accessories</a>
+                <a href="products.html?category=footwear" class="footer-link">Footwear</a>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Help</h4>
+                <a href="#" class="footer-link">Customer Service</a>
+                <a href="#" class="footer-link">Track Order</a>
+                <a href="#" class="footer-link">Returns</a>
+                <a href="#" class="footer-link">Shipping Info</a>
+            </div>
+            <div class="footer-section">
+                <h4 class="footer-title">Company</h4>
+                <a href="#" class="footer-link">About Us</a>
+                <a href="#" class="footer-link">Careers</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Terms of Service</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 LUXORA. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
